@@ -31,7 +31,7 @@
 | --- | --- | --- |
 | Java | 1.8 | 开发语言 |
 | Apache Maven | 3.6.3 | 构建工具 |
-| MySQL | 5.7.44 | 数据库 |
+| MySQL | 8.4.0 | 数据库 |
 | Redis | 7.4 | 缓存 |
 | Spring Boot | 2.5.15 | 基础框架 |
 | Spring Security | 5.5.8 | 安全框架 |
