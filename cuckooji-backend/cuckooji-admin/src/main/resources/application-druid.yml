@@ -1,14 +1,23 @@
 # 数据源配置
 spring:
+  sql:
+    # 数据库初始化
+    init:
+      continue-on-error: false
+      platform: mysql
+      # always = 每次启动后都要执行，never = 不执行，新项目初始化执行一次之后改为 never 即可
+      mode: always
+      schema-locations: classpath:sql/schema.sql
+      data-locations: classpath:sql/data.sql
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     druid:
       # 主库数据源
       master:
-        url: jdbc:mysql://localhost:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+        url: jdbc:mysql://localhost:13306/cuckooji?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
         username: root
-        password: password
+        password: 123456
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭
@@ -35,7 +44,7 @@ spring:
       # 配置一个连接在池中最大生存的时间，单位是毫秒
       maxEvictableIdleTimeMillis: 900000
       # 配置检测连接是否有效
-      validationQuery: SELECT 1 FROM DUAL
+      validationQuery: SELECT 1
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
@@ -48,7 +57,7 @@ spring:
         url-pattern: /druid/*
         # 控制台管理用户名和密码
         login-username: cuckooji
-        login-password: 123456
+        login-password: cuckooji-druid-2024
       filter:
         stat:
           enabled: true
@@ -59,3 +68,5 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+  redis:
+    host: ip
