@@ -100,7 +100,7 @@ token:
 # MyBatis Plus 配置
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-  type-aliases-package: com.scaffold.**.domain
+  type-aliases-package: com.cuckooji.**.domain
   check-config-location: false
   configuration:
     map-underscore-to-camel-case: true
