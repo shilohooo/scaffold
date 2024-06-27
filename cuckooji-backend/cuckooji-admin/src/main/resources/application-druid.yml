@@ -6,7 +6,7 @@ spring:
       continue-on-error: false
       platform: mysql
       # always = 每次启动后都要执行，never = 不执行，新项目初始化执行一次之后改为 never 即可
-      mode: always
+      mode: never
       schema-locations: classpath:sql/schema.sql
       data-locations: classpath:sql/data.sql
   datasource:
