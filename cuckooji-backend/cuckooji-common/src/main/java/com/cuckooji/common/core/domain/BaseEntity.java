@@ -1,5 +1,6 @@
 package com.cuckooji.common.core.domain;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.cuckooji.common.constant.DatePatternConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -27,26 +28,26 @@ public class BaseEntity implements Serializable {
     /**
      * 创建人 ID
      */
-    @TableField("create_by")
+    @TableField(value = "create_by", fill = FieldFill.INSERT)
     private Long createBy;
 
     /**
      * 创建时间
      */
-    @TableField("create_time")
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
     @JsonFormat(pattern = DatePatternConstants.NORM_DATETIME_PATTERN)
     private Date createTime;
 
     /**
      * 更新人 ID
      */
-    @TableField("update_by")
+    @TableField(value = "update_by", fill = FieldFill.INSERT_UPDATE)
     private Long updateBy;
 
     /**
      * 更新时间
      */
-    @TableField("update_time")
+    @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     @JsonFormat(pattern = DatePatternConstants.NORM_DATETIME_PATTERN)
     private Date updateTime;
 
