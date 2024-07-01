@@ -68,7 +68,7 @@ public class SysPostController extends BaseController {
         } else if (!postService.checkPostCodeUnique(post)) {
             return error("新增岗位'" + post.getPostName() + "'失败，岗位编码已存在");
         }
-        post.setCreateBy(getUsername());
+        post.setCreateBy(getUserId());
         return toAjax(postService.insertPost(post));
     }
 
@@ -84,7 +84,7 @@ public class SysPostController extends BaseController {
         } else if (!postService.checkPostCodeUnique(post)) {
             return error("修改岗位'" + post.getPostName() + "'失败，岗位编码已存在");
         }
-        post.setUpdateBy(getUsername());
+        post.setUpdateBy(getUserId());
         return toAjax(postService.updatePost(post));
     }
 

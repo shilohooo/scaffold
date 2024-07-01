@@ -1,9 +1,9 @@
 package com.cuckooji.generator.service;
 
+import com.cuckooji.generator.domain.GenTable;
+
 import java.util.List;
 import java.util.Map;
-
-import com.cuckooji.generator.domain.GenTable;
 
 /**
  * 业务 服务层
@@ -78,9 +78,9 @@ public interface IGenTableService {
      * 导入表结构
      *
      * @param tableList 导入表列表
-     * @param operName  操作人员
+     * @param userId    操作人员 ID
      */
-    public void importGenTable(List<GenTable> tableList, String operName);
+    public void importGenTable(List<GenTable> tableList, Long userId);
 
     /**
      * 预览代码

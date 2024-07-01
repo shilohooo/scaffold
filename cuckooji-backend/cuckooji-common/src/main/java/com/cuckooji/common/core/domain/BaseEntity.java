@@ -26,11 +26,9 @@ public class BaseEntity implements Serializable {
 
     /**
      * 创建人 ID
-     * <p>
-     * fixme：改为 Long 类型
      */
     @TableField("create_by")
-    private String createBy;
+    private Long createBy;
 
     /**
      * 创建时间
@@ -41,11 +39,9 @@ public class BaseEntity implements Serializable {
 
     /**
      * 更新人 ID
-     * <p>
-     * fixme：改为 Long 类型
      */
     @TableField("update_by")
-    private String updateBy;
+    private Long updateBy;
 
     /**
      * 更新时间
@@ -59,6 +55,14 @@ public class BaseEntity implements Serializable {
      */
     @TableField("remark")
     private String remark;
+
+    /**
+     * 逻辑删除标识
+     * <p>
+     * {@code true} = 已删除，{@code false} = 未删除
+     */
+    @TableField("deleted")
+    private Boolean deleted;
 
     /**
      * 请求参数

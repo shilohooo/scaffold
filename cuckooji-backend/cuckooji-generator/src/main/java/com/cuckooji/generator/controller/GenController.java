@@ -10,7 +10,6 @@ import com.cuckooji.common.core.domain.AjaxResult;
 import com.cuckooji.common.core.page.TableDataInfo;
 import com.cuckooji.common.core.text.Convert;
 import com.cuckooji.common.enums.BusinessType;
-import com.cuckooji.common.utils.SecurityUtils;
 import com.cuckooji.common.utils.sql.SqlUtil;
 import com.cuckooji.generator.domain.GenTable;
 import com.cuckooji.generator.domain.GenTableColumn;
@@ -104,7 +103,7 @@ public class GenController extends BaseController {
         String[] tableNames = Convert.toStrArray(tables);
         // 查询表信息
         List<GenTable> tableList = genTableService.selectDbTableListByNames(tableNames);
-        genTableService.importGenTable(tableList, SecurityUtils.getUsername());
+        genTableService.importGenTable(tableList, getUserId());
         return success();
     }
 
@@ -129,8 +128,7 @@ public class GenController extends BaseController {
                 }
             }
             List<GenTable> tableList = genTableService.selectDbTableListByNames(tableNames.toArray(new String[tableNames.size()]));
-            String operName = SecurityUtils.getUsername();
-            genTableService.importGenTable(tableList, operName);
+            genTableService.importGenTable(tableList, getUserId());
             return AjaxResult.success();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);

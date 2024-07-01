@@ -1,13 +1,13 @@
 package com.cuckooji.generator.util;
 
-import java.util.Arrays;
-
-import org.apache.commons.lang3.RegExUtils;
 import com.cuckooji.common.constant.GenConstants;
 import com.cuckooji.common.utils.StringUtils;
 import com.cuckooji.generator.config.GenConfig;
 import com.cuckooji.generator.domain.GenTable;
 import com.cuckooji.generator.domain.GenTableColumn;
+import org.apache.commons.lang3.RegExUtils;
+
+import java.util.Arrays;
 
 /**
  * 代码生成器 工具类
@@ -18,14 +18,14 @@ public class GenUtils {
     /**
      * 初始化表信息
      */
-    public static void initTable(GenTable genTable, String operName) {
+    public static void initTable(GenTable genTable, Long userId) {
         genTable.setClassName(convertClassName(genTable.getTableName()));
         genTable.setPackageName(GenConfig.getPackageName());
         genTable.setModuleName(getModuleName(GenConfig.getPackageName()));
         genTable.setBusinessName(getBusinessName(genTable.getTableName()));
         genTable.setFunctionName(replaceText(genTable.getTableComment()));
         genTable.setFunctionAuthor(GenConfig.getAuthor());
-        genTable.setCreateBy(operName);
+        genTable.setCreateBy(userId);
     }
 
     /**
