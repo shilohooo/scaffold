@@ -29,7 +29,6 @@ public class SysMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         try {
             final LoginUser user = SecurityUtils.getLoginUser();
-            log.info("start insert fill ....");
             final Date now = new Date();
             this.setFieldValByName("createTime", now, metaObject);
             this.setFieldValByName("createBy", user.getUsername(), metaObject);
@@ -52,7 +51,6 @@ public class SysMetaObjectHandler implements MetaObjectHandler {
     public void updateFill(MetaObject metaObject) {
         try {
             final LoginUser user = SecurityUtils.getLoginUser();
-            log.info("start update fill ....");
             this.setFieldValByName("updateTime", new Date(), metaObject);
             this.setFieldValByName("updateBy", user.getUserId(), metaObject);
         } catch (Exception ignored) {

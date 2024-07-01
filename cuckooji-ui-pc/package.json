@@ -1,8 +1,8 @@
 {
-  "name": "ruoyi",
+  "name": "cuckooji-scaffold",
   "version": "3.8.7",
-  "description": "若依管理系统",
-  "author": "若依",
+  "description": "咕咕鸡 Web 脚手架",
+  "author": "cuckooji dev team",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/y_project/RuoYi-Vue.git"
+    "url": "https://github.com/shilohooo/scaffold.git"
   },
   "dependencies": {
     "@element-plus/icons-vue": "2.3.1",
